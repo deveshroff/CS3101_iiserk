@@ -4,12 +4,14 @@
 
 int main()
 {
-	float x[5] = {1,2,3,4,5}, y[5] = {6,7,8,9,10};
+	float x[5] = {12,45,10,78,69}, y[5] = {35,67,90,11,32};
 	float eucl, manhat, cheby;
 	eucl = euclidean(x,y);
-	printf("%f\n", eucl);
+	printf("The Euclidean distance between X and Y is %.2f\n", eucl);
 	manhat = manhatten(x,y);
-	printf("%f\n", manhat);
+	printf("The Manhatten distance between X and Y is %.2f\n", manhat);
+	cheby = chebyshev(x,y);
+	printf("The Chebyshev distance between X and Y is %.2f\n", cheby);
 
 
 
