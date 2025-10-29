@@ -36,9 +36,9 @@ char* F(char *string)
 
 int main()
 {
-	char *name = "James";
-	char key[10];
-	F_2(name, key);
+	char *name = "James", *key;
+	//char key[10];
+	key = F(name);
 	printf("%s\n", key);
 
 }

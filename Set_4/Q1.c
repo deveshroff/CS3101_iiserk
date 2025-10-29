@@ -49,9 +49,9 @@ int main()
 {
 	int n = 5,i,j,k;
 	char c[2*n - 1] = {};
-	for(i=1;i<=n;i++)
+	for(i=0;i<n;i++)
 	{
-		c[i-1] = n-i+1;
+		c[i] = n-i;
 	}
 	for(k=n;k<=2*n-1;k++)
 	{
