@@ -8,10 +8,11 @@ void push(char array[][50], int *top, char *location)
 		*top = *top + 1;
 		strcpy(array[*top],location);
 }
-char pop(char array[][50], char *removed, int *top)
+char* pop(char array[][50], char *removed, int *top)
 {
 		*top = *top -1;
 		strcpy(removed,array[(*top)+1]);
+		return removed;
 		
 }
 /*bool isEmpty()
@@ -56,12 +57,7 @@ int main()
 	}
 	for(i =0; i<8; i++)
 	{
-		pop(array, removed[i], &top);
+		printf("%s\n", pop(array, removed[i], &top));
 	}
-	for(i =0; i<8; i++)
-	{
-		printf("%s\n", removed[i]);
-	}
-
 
 }
