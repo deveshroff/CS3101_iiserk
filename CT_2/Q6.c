@@ -4,7 +4,7 @@
 
 int spynumber(int n)
 {
-	int i, array[10] ={}, sum = 0, prod = 1;
+	int sum = 0, prod = 1;
 
 	while(n>0)
 	{
