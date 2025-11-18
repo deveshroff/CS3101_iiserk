@@ -44,10 +44,22 @@ int retMaxID (STUDENT *student, char *major) //Big O for retmaxId is n^3, since 
 	}
 }
 
+void initialize(STUDENT *student, char *name, char *major, int id, float cgpa)
+{
+	strcpy(student->name, name);
+	strcpy(student->major, major);
+	student->id = id;
+	student->cgpa = cgpa;
+}
 int main()
 {
 	STUDENT students[10], student_1 ={"Devang","DPS",12,9.19}, student_2 = {"Manish","DPS",34,8.88}, student_3 ={"Ruturaj","DPS",67,8.10}, student_4 ={"Vedshree","DCS",43,7.23}, student_5 ={"Rishabh","DPS",10,6.89}, student_6 ={"Nandita","DBS",77,7.90}, student_7 = {"Janu","DBS",99,5.50}, student_8 = {"Devansh","DCS",45,9.20}, student_9 = {"Albin","DBS",90,6.69}, student_10 ={"Adithya","DPS",101,8.23};
 	char major_key[10];
+	STUDENT students_test[2];
+	char name[2][50] = {"Devang", "Shreya"}, major[2][50] = {"DPS", "CA"};
+	int id[2] = {12,10}, i;
+	float cgpa[2] = {9.19, 9.05};
+
 	students[0] = student_1;
 	students[1] = student_2;
 	students[2] = student_3;
@@ -59,9 +71,13 @@ int main()
 	students[8] = student_9;
 	students[9] = student_10;
 	
+	for(i=0; i<2; i++)
+	{
+		initialize(&students_test[i], name[i], major[i], id[i], cgpa[i]);
+	}
 	printf("Enter the Major good sir!\n");
 	scanf("%s",major_key);
-	printf("Student Id with max CGPA in %s is %d\n", major_key, retMaxID(students, major_key));
+	printf("Student Id with max CGPA in %s is %d\n", major_key, retMaxID(students_test, major_key));
 
 }
 
