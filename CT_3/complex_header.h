@@ -12,3 +12,14 @@ void addComplex(int *a, int *b, int *c)  //arguments are the three arrays
 	return ;
 }
 
+int dotComplex(int *a, int *b)  
+{
+	int i, sum = 0;
+	
+	for(i=0; i<2; i++)
+	{
+		sum += a[i]*b[i];  
+	}
+	
+	return sum;
+}
