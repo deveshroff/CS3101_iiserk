@@ -2,7 +2,6 @@
 //Bubble Sort --> Big O(n^2)
 #include<stdio.h>
 
-
 void bubble_sort(int a[])
 {	int i, j, temp, n = 5;
 
