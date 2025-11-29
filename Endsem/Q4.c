@@ -5,7 +5,7 @@ int complement(int arr1[], int arr2[], int temp[], int n1, int n2 )
 	int i = 0;
 	int j = 0;
 	int k = 0;
-	while(i <= n1)
+	while(i < n1)
 	{
 	if( arr1[i] != arr2[j])
 		{
@@ -26,56 +26,10 @@ int complement(int arr1[], int arr2[], int temp[], int n1, int n2 )
 	return k;
 }
 
-int merge(int arr1[], int arr2[], int temp[], int n1, int n2 ) //Merge arr1 and arr2 to temp
-{
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	while(i <= n1 && j <= n2)
-	{
-		if( arr1[i] < arr2[j])
-			{
-				temp[k] = arr1[i];
-				k++;
-				i++;
-			}
-		else if(arr1[i] = arr2[j])
-			{
-				i++;
-			}
-		else if(arr1[i] > arr2[j])
-			{
-				j++;
-				if(j == n2)
-				{
-					temp[k] = arr1[i];
-					k = k + 1;
-					i = i + 1; // corrected version
-				}
-
-			}
-	}
-	
-	return k;
-}
 int main()
 {
-	int a[8] = {1,2,3,4,5,6,7,8}, b[6] = {2,4,6,8,10,12}, c[20], d[20], len, i;
-	len = complement(a, b, c, 8, 6); //changing c and getting its length.
-	if(len == 0)
-	{
-		printf("No compliment Found!\n");
-	}
-	else
-	{
-		for(i = 0; i< len - 1; i++)
-		{
-			printf("%d ", c[i]);
-		}
-		printf("\n");
-	}
-
-	len = merge(a, b, d, 8, 6); //changing c and getting its length.
+	int a[6] = {2,3,4,5,6,7}, b[6] = {2,4,6,8,10,12}, c[20], len, i;
+	len = complement(a, b, c, 6, 6); //changing c and getting its length.
 	if(len == 0)
 	{
 		printf("No compliment Found!\n");
@@ -84,7 +38,7 @@ int main()
 	{
 		for(i = 0; i< len; i++)
 		{
-			printf("%d ", d[i]);
+			printf("%d ", c[i]);
 		}
 		printf("\n");
 	}
